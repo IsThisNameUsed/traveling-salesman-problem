@@ -13,7 +13,8 @@ Town::~Town()
 {
 }
 
-string Town::getName()
-{	return name;
+string Town::GetName()
+{	
+  return name;
 }
 
