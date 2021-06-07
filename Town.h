@@ -9,7 +9,7 @@ class Town
 public:
 	Town(string _name, int _id);
 	~Town();
-	string getName();
+	string GetName();
 	int id;
 private:
 	string name;
