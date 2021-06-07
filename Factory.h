@@ -19,7 +19,7 @@ public:
 	vector<Gene> population;
 	vector<Gene> oldPopulation;
 private:
-	int SizePopulation;
+	int sizePopulation;
 	Country* country = Country::getInstance();
 	
 };
