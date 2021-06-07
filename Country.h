@@ -20,11 +20,11 @@ public:
 
 	std::vector<Town> tabTown;
 	int **distanceTab;
-	void addTown(string name,int id);
-	int indexOf(Town town);
+	void AddTown(string name,int id);
+	int IndexOfTown(Town town);
 	void InitializeCountry();
 	int DistanceBetween(Town town1, Town town2);
-	void displayCountry();
+	void DisplayCountry();
 	int townNumber;
 };
 
