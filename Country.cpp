@@ -12,7 +12,7 @@ Country::~Country()
 {
 }
 
-void Country::addTown(string name,int id)
+void Country::AddTown(string name,int id)
 {
 	tabTown.push_back(Town(name, id));
 	townNumber += 1;
@@ -39,7 +39,7 @@ void Country::InitializeCountry()
 	}
 }
 
-void Country::displayCountry()
+void Country::DisplayCountry()
 {
 	for (int i = 0; i < townNumber; i++)
 	{
@@ -51,7 +51,7 @@ void Country::displayCountry()
 	}
 }
 
-int Country::indexOf(Town town)
+int Country::IndexOfTown(Town town)
 {
 	for (int i = 0; i < tabTown.size(); i++)
 	{
