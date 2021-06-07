@@ -3,7 +3,7 @@
 #include <list>
 #include <iostream>
 
-Factory::Factory(int _SizePopulation):SizePopulation(_SizePopulation)
+Factory::Factory(int _sizePopulation):sizePopulation(_sizePopulation)
 {
 }
 
@@ -42,7 +42,7 @@ void Factory:: Initialize()
 {
 	population.clear();
 	oldPopulation.clear();
-	for (int i = 0; i < SizePopulation; i++)
+	for (int i = 0; i < sizePopulation; i++)
 	{
 		population.push_back(CreateRandomGene(country));
 	}	
@@ -86,7 +86,7 @@ void Factory::CreateNewPopulation() {
 	//Add best gene to new population
 	population.push_back(oldPopulation[0]);
 	//Random mutation on random gene
-	int random = rand() % SizePopulation;
+	int random = rand() % sizePopulation;
 	cout << endl<< "Mutation on ";
 	oldPopulation[random].DisplaySequence();
 	population.push_back(RandomMutation(oldPopulation[random]));
@@ -95,7 +95,7 @@ void Factory::CreateNewPopulation() {
 	cout << endl;
 	//best et 2d best cross-over
 	cout << endl<< "Cross over beteween first and random" << endl;
-	random = rand() % SizePopulation;
+	random = rand() % sizePopulation;
 	population.push_back(CrossOverBetween(oldPopulation[0], oldPopulation[random]));
 	oldPopulation[0].DisplaySequence();
 	cout << endl << "et ";
@@ -104,10 +104,10 @@ void Factory::CreateNewPopulation() {
 	population[2].DisplaySequence();
 	//best and worst cross over
 	cout << endl << "Cross over beteween first and worst" << endl;
-	population.push_back(CrossOverBetween(oldPopulation[0], oldPopulation[SizePopulation-1]));
+	population.push_back(CrossOverBetween(oldPopulation[0], oldPopulation[sizePopulation-1]));
 	oldPopulation[0].DisplaySequence();
 	cout << endl << "et ";
-	oldPopulation[SizePopulation - 1].DisplaySequence();
+	oldPopulation[sizePopulation - 1].DisplaySequence();
 	cout << endl << "donne:" << endl;
 	population[3].DisplaySequence();
 
@@ -122,7 +122,7 @@ void Factory::CreateNewPopulation() {
 void Factory::SortPopulation()
 {
 	oldPopulation.clear();
-	for (int i = 0; i < SizePopulation; i++)
+	for (int i = 0; i < sizePopulation; i++)
 	{
 		oldPopulation.push_back(GetBestGene(SizePopulation - i));
 	}
